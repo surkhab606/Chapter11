@@ -23,10 +23,14 @@ public class Stats1
 	//Main method
 	public static void main(String[] args)
 	{
+		
 		//New file named dataFile
 		File dataFile = new File("test1.txt");
+		
 		FileReader in;
+		
 		BufferedReader readFile;
+		
 		String grade;
 		double avgGrade;
 		double highGrade = 0;
@@ -34,8 +38,18 @@ public class Stats1
 		double totalGrades = 0;	
 		int numGrades = 0;
 		
-		
+		try 
+		{
+			in = new FileReader(dataFile);
+			dataFile = new BufferedReader(in);
+			while ((grade = readFile.readLine()) != null)
+			{
+				numGrades +=1;
+				System.out.println(grade);
+			}
+		}
 	}
 	
 
 }
+	
