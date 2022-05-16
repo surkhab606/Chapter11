@@ -11,81 +11,78 @@ Course: Computer Science 30
  
 */
 
+//Added to FindandReplace package
 package FindandReplace;
 
 import java.io.*;
 import java.util.Scanner;
 
+
 public class FindnReplace 
 {
 
+	//Main method
 	public static void main(String[] args) 
 	{
 
-	
+		//Variables used
         FileWriter out;
         String fileName;
         BufferedReader reader = null;
         BufferedWriter writer = null;
+        
+        //Variable for original word
         String ogWord = "";
 
 		
 		
-      
+        //Prompts user for the name of the file
 		Scanner userInput = new Scanner(System.in);
 		System.out.println("Please enter the name of your file: ");
+		
+		//Finds the file that the user has written
 		fileName = userInput.nextLine();
 		fileName = fileName + ".txt";
 		File dataFile = new File(fileName);
 		
-		
-		
-		System.out.println("What Word or Phrase Would You Like to Find");
+		//Prompts user for what word/phrase they would like to find 
+		System.out.println("What word or phrase would you like to find?");
 		String findWord = userInput.nextLine();
 		
-		
-		
-		
-		System.out.println("What Word or Phrase Would You Like to Replace " + findWord + " With");
+		//Prompts user for what word/phrase they would like to replace the found word with 
+		System.out.println("What word or phrase would you like to replace " + findWord + " with?");
 		String replaceWord = userInput.nextLine();
-		
-		
-		
 		
 		try 
 		{
-
-			
 			reader = new BufferedReader(new FileReader(dataFile));
+			String Line = reader.readLine();
 			
-			
-			String currentLine = reader.readLine();
-			
-			
-			
-			while(currentLine != null) 
+			//Reads the current line
+			while(Line != null) 
 			{
+				//Add lines read to the original word variable
+				ogWord += Line + System.lineSeparator();
 				
-				ogWord += currentLine + System.lineSeparator();
 				
-				
-				//Read Line
-				currentLine = reader.readLine();
+				//Read line
+				Line = reader.readLine();
 				
 				
 			}
 			
-			
-			String newData = ogWord.replaceAll(findWord, replaceWord);
+			//New variable replaces all the words
+			String newWord = ogWord.replaceAll(findWord, replaceWord);
 			
 
-			
+			//Write the new words to the file
 			writer = new BufferedWriter(new FileWriter(dataFile));
+	
 			
-			writer.write(newData);
+			writer.write(newWord);
 			
-			
-			System.out.println("New Data Written To File");
+			//Outputs that new words have been written to the file 
+			System.out.println("New words have been written to the file");
 			
 			
 			reader.close();
@@ -94,7 +91,7 @@ public class FindnReplace
 		}
 		
 	
-
+		//Exceptions
 		catch(IOException e)
 		
 		{
