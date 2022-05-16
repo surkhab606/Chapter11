@@ -1,5 +1,3 @@
-
-
 /*
 Program: MyFile.java          Last Date of this Revision: April 12, 2022
 Purpose: To create an application that prompts the user for the name of a file and then displays 
