@@ -52,26 +52,25 @@ public class Stats1
 			in = new FileReader(dataFile);
 			readFile = new BufferedReader(in);
 		
-			//This while loop essentially states to read the file until white space (no characters)
+			//Read the line until you reach white space
 			while ((line = readFile.readLine()) != null)
 			{
 				
-				
+				//Print out names and grades
 				System.out.println(line + "\t");
+				numGrades +=1;
 				line = readFile.readLine();
-				System.out.println(line);
-				
-
 				grade = Double.parseDouble(line);
 				System.out.println("\t\t\t" + line);
 				totalGrades += Double.parseDouble(line);
-				numGrades +=1;
 				
+				//If the current grade is higher thant the highestGrade, the current grade becomes the highestGrade
 				if (grade > highGrade)
 				{
 					highGrade = grade;
 				}
 				
+				//If the current grade is lower thant the lowestGrade, the current grade becomes the lowestGrade
 				if (grade < lowGrade) 
 				{
 					
@@ -79,6 +78,7 @@ public class Stats1
 				}
 				
 			}
+				//Print out the highest grade, lowest grade and average
 				System.out.println("\n"
 						+ "Highest grade is: " + highGrade);
 				System.out.println("Lowest grade is: " + lowGrade);
@@ -88,9 +88,11 @@ public class Stats1
 		
 	
 			
-			
+			//close the file 
 			readFile.close();
 			in.close();
+			
+			//Exceptions
 		} catch (FileNotFoundException e)
 		
 		{
@@ -106,4 +108,23 @@ public class Stats1
 	
 
 }
+
+/*
+SCREEN DUMP
+Name: 			Score:
+Ali   				
+			90 
+Surkhab 			
+			95
+Matthew		 		
+			95
+Carter 				
+			69
+
+Highest grade is: 95.0
+Lowest grade is: 69.0
+Average = 87.25
+
+
+ */
 	
