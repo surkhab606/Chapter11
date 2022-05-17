@@ -12,6 +12,7 @@ package Roster;
 
 import java.io.*;
 
+
 public class StuName implements Serializable 
 {
 	
