@@ -29,11 +29,13 @@ public class Stats1
 		//New file named dataFile
 		File dataFile = new File("test1.txt");
 		
+		//Reads data and converts bytes to characters
 		FileReader in;
 		
+		//Reads text from a character input stream
 		BufferedReader readFile;
 		
-		
+		//Variables
 		String line;
 		double avgGrade;
 		double highGrade = 0;
@@ -42,23 +44,28 @@ public class Stats1
 		int numGrades = 0;
 		double grade = 0;
 		
-		try {
 		
+		try {
+			
+			//Heading text
 			System.out.println("Name: \t\t\tScore:");
 			in = new FileReader(dataFile);
 			readFile = new BufferedReader(in);
 		
+			//This while loop essentially states to read the file until white space (no characters)
 			while ((line = readFile.readLine()) != null)
 			{
 				
 				
 				System.out.println(line + "\t");
-				
-				numGrades +=1;
 				line = readFile.readLine();
+				System.out.println(line);
+				
+
 				grade = Double.parseDouble(line);
 				System.out.println("\t\t\t" + line);
 				totalGrades += Double.parseDouble(line);
+				numGrades +=1;
 				
 				if (grade > highGrade)
 				{
