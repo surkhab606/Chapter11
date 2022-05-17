@@ -8,35 +8,40 @@ Course: Computer Science 30
  
 */
 
+//Adds StuName to roster package
 package Roster;
 
 import java.io.*;
 
-
+//Class implements serializable
 public class StuName implements Serializable 
 {
 	
 	
-	//Variables for first Name Last Name
+	//First name variable
 	private String firstName;
+	
+	//Last name variable
 	private String lastName;
 	
 	
-	//constructor method
+	//Constructor method
 	public StuName(String fn, String ln) 
 	{
+		//Simplifies firstName and lastName variables
 		firstName = fn;
 		lastName = ln;
 	}
 	
 
-	//toString() Method that returns first name and last name
+	//Method returns first and last name
 	public String toString() 
 	{
+		//String for displaying both first and last name
 		String stuNameString;
-		
-		
 		stuNameString = firstName + " " + lastName;
+		
+		//Returns first and last name 
 		return(stuNameString);
 	}
 

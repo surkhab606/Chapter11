@@ -12,51 +12,61 @@ Course: Computer Science 30
  
 */
 
-
+//Adds RosterClass to roster package
 package Roster;
 
 import java.io.*;
 import java.util.Scanner;
 
+//Roster class
 public class RosterClass
 {
+	//Main method
 	public static void main(String[] args)
 	
 	{
 		
+		//User input 
 		Scanner userInput = new Scanner(System.in);
 		
-		
+		//Variables for file name, user input, first name and last name
 		String fileName;
 		int userNum;
 		String fName;
 		String lName;
 		
+		//Prompts user for the name of the file
 		System.out.println("Please enter the name of your file: ");
 		fileName = userInput.next();
 		fileName = fileName + ".txt";
 		
+		//Creates a new file with the name that the user entered
 		File stuFile = new File(fileName);
 
+		//Prompts user for the number of students in the class
 		System.out.println("Please enter then number of students in your class: ");
 		userNum = userInput.nextInt();
 		
+		
 		try 
 		{	
+			//Write objects
 			FileOutputStream out = new FileOutputStream(stuFile);
 			ObjectOutputStream writeStu = new ObjectOutputStream(out);
+			
 			
 			for (int i = 0; i < userNum; i++) 
 			{
 				
-				
-				  //Get First Name and Last Name of Student From User
+				  //Prompts user for the students first name 
 				  System.out.print("Enter Student First Name: ");
 				  fName = userInput.next();
 				  
+				  //Prompts user for the students last name
 				  System.out.print("Enter Student Last Name: ");
-				  
 				  lName = userInput.next();
+				  
+				  //Write the students name to file 
 				  writeStu.writeObject(new StuName(fName, lName));
 				  
 			}
@@ -71,11 +81,12 @@ public class RosterClass
 		    
 		    for (int i = 0; i < userNum; i++) 
 			{
+		    		   //Prints student names
 					   System.out.println((StuName)readStuName.readObject());
 		   
 			}
 		    
-		    
+		    //Close file 
 		    readStuName.close();
 		}
 			
