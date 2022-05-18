@@ -102,3 +102,17 @@ public class FindnReplace
 	}
 	
 }
+
+
+/* SCREEN DUMP
+
+Please enter the name of your file: 
+filestudents
+What word or phrase would you like to find?
+Johnson
+What word or phrase would you like to replace Johnson with?
+Surkhab
+New words have been written to the file
+
+ */
+

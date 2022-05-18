@@ -44,7 +44,7 @@ public class RosterClass
 		File stuFile = new File(fileName);
 
 		//Prompts user for the number of students in the class
-		System.out.println("Please enter then number of students in your class: ");
+		System.out.println("Please enter the number of students in your class: ");
 		userNum = userInput.nextInt();
 		
 		
@@ -59,11 +59,11 @@ public class RosterClass
 			{
 				
 				  //Prompts user for the students first name 
-				  System.out.print("Enter Student First Name: ");
+				  System.out.print("Please enter student first name: ");
 				  fName = userInput.next();
 				  
 				  //Prompts user for the students last name
-				  System.out.print("Enter Student Last Name: ");
+				  System.out.print("Please enter students last name: ");
 				  lName = userInput.next();
 				  
 				  //Write the students name to file 
@@ -72,7 +72,9 @@ public class RosterClass
 			}
 			
 			writeStu.close();
-			System.out.println("Data Has Been Written To File");
+			
+			//Outputs data has been written to file message
+			System.out.println("Data has been written to the file.");
 			
 			
 			FileInputStream in = new FileInputStream(stuFile);
@@ -116,6 +118,20 @@ public class RosterClass
 		
 		
 }
-	
+
+/*
+SCREEN DUMP 
+
+
+Please enter the name of your file: 
+filestudents
+Please enter the number of students in your class: 
+1
+Please enter student first name: Johnson
+Please enter students last name: Mundi
+Data has been written to the file.
+Johnson Mundi
+
+*/
 	
 

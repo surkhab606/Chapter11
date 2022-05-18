@@ -166,3 +166,30 @@ public class Stats2
 		}
 	}
 }
+
+/*
+SCREEN DUMP 
+
+
+Please enter the number of student grades that you would like to enter: 
+2
+Please enter the name of the file: 
+filestudents
+Please enter the student's name: Surkhab
+Please enter the student's grade: 99
+Please enter the student's name: Ali
+Please enter the student's grade: 94
+
+Data has been recorded to the file. 
+
+Name:		Grade:
+Surkhab	
+		99.0%
+Ali	
+		94.0%
+
+Highest grade is: 99.0%
+Lowest grade is: 94.0%
+Average = 96.5%
+
+*/

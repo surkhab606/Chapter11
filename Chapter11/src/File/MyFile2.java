@@ -21,10 +21,18 @@ public class MyFile2
 
 {
 	//Main method
-	public static void main(String[] args)
+	public static void main(String[] args) 
 	{
 		//Created a new file called zzz.text
-		File textFile = new File("zzz.text");
+		File textFile = new File("zzz.txt");
+		try {
+			textFile.createNewFile();
+		} catch (IOException e) 
+		{
+			e.printStackTrace();
+		}
+		
+		//Tells user that file has been created
 		System.out.println("File has been created");
 		String userInput;
 		
@@ -76,6 +84,7 @@ D
 File has been deleted.
 
 File has been created
+
 
 Would you like to delete (D) or keep (K) the file? 
 Q to quit.
